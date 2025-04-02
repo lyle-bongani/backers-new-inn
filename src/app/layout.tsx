@@ -9,8 +9,8 @@ import { GlobalStyle } from '../styled-components.config'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Baker's Inn Zimbabwe",
-  description: "Zimbabwe's favorite bread and confectionery manufacturer",
+  title: "Baker's Inn",
+  description: "Delicious baked goods and more",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

@@ -5,6 +5,7 @@ import { useServerInsertedHTML } from 'next/navigation'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import { generateClassName } from '../styled-components.config'
 
 const theme = createTheme({
   palette: {
@@ -26,17 +27,11 @@ export default function StyledComponentsRegistry({
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement()
+    styledComponentsStyleSheet.instance.clearTag()
     return <>{styles}</>
   })
 
-  if (typeof window !== 'undefined') {
-    return (
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
-    )
-  }
+  if (typeof window !== 'undefined') return <>{children}</>
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>

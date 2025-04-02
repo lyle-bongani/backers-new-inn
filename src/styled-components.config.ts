@@ -10,13 +10,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 `
 
-// This ensures consistent class name generation between server and client
+// Ensure consistent class name generation between server and client
 export const generateClassName = (componentId: string) => {
   return `sc-${componentId}`
 } 
