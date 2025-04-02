@@ -1,24 +1,18 @@
-import type { Metadata } from "next";
+'use client'
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from './registry'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import { GlobalStyle } from '../styled-components.config'
+import styled from 'styled-components'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: "Baker's Inn",
-  description: "Delicious baked goods and more",
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
-    ],
-    apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
-  },
-};
+const MainContent = styled.main`
+  padding-top: 5rem; // Add padding to create space for fixed nav
+`
 
 export default function RootLayout({
   children,
@@ -31,7 +25,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <GlobalStyle />
           <Nav />
-          <main>{children}</main>
+          <MainContent>{children}</MainContent>
           <Footer />
         </StyledComponentsRegistry>
       </body>
