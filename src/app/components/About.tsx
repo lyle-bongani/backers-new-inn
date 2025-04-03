@@ -6,6 +6,10 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 6rem 4rem;
+
+  @media (max-width: 768px) {
+    padding: 4rem 1.5rem;
+  }
 `
 
 const Grid = styled.div`
@@ -25,18 +29,32 @@ const Title = styled.h1`
   font-size: 3.5rem;
   font-weight: bold;
   line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    text-align: center;
+  }
 `
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    align-items: center;
+  }
 `
 
 const Description = styled.p`
   color: #666666;
   font-size: 1.25rem;
   line-height: 1.8;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `
 
 const ReadMoreButton = styled(Link)`
@@ -58,12 +76,13 @@ const ReadMoreButton = styled(Link)`
 `
 
 const ImageGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  display: none; // Hide by default on mobile
 
   @media (min-width: 768px) {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem; // Increased gap between images
+    margin-top: 2rem; // Add some space above the image grid
   }
 `
 
@@ -71,6 +90,11 @@ const ImageContainer = styled.div`
   overflow: hidden;
   border-radius: 0.75rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease; // Add smooth transition for hover effect
+
+  &:hover {
+    transform: translateY(-5px); // Add subtle lift effect on hover
+  }
 `
 
 const StyledImage = styled(Image)`

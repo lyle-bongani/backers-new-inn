@@ -14,6 +14,12 @@ const Container = styled.div`
   min-height: 400px;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    margin: 1rem;
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
 `
 
 const Content = styled.div`
@@ -28,6 +34,7 @@ const Content = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 1.5rem;
   }
 `
 
@@ -37,6 +44,11 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 200px;
+    order: -1;
+  }
 `
 
 const TextContent = styled.div`
@@ -47,6 +59,7 @@ const TextContent = styled.div`
 
   @media (max-width: 768px) {
     align-items: center;
+    gap: 1rem;
   }
 `
 
@@ -62,6 +75,10 @@ const Title = styled.h2`
   line-height: 1;
   font-family: 'Dumb', 'Comic Sans MS', cursive;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
 `
 
 const Description = styled.p`
@@ -70,6 +87,11 @@ const Description = styled.p`
   line-height: 1.6;
   opacity: 0.9;
   max-width: 500px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    max-width: 100%;
+  }
 `
 
 const PlayButton = styled(Link)`
@@ -85,6 +107,11 @@ const PlayButton = styled(Link)`
   transition: transform 0.3s;
   text-transform: uppercase;
 
+  @media (max-width: 768px) {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+
   &:hover {
     transform: scale(1.05);
   }
@@ -98,9 +125,13 @@ const KidsCorner = () => {
           <Image
             src="/images/mariofinal.png"
             alt="Mario Character"
-            width={600}
-            height={600}
-            style={{ objectFit: 'contain' }}
+            width={400}
+            height={400}
+            style={{ 
+              objectFit: 'contain',
+              maxWidth: '100%',
+              height: 'auto'
+            }}
             priority
           />
         </ImageContainer>

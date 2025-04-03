@@ -123,9 +123,7 @@ const ImageContainer = styled.div`
   overflow: visible;
 
   @media (max-width: 768px) {
-    height: 250px;
-    justify-content: center;
-    margin-top: 1rem;
+    display: none;
   }
 `
 
